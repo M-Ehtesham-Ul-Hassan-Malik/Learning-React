@@ -18,13 +18,13 @@ function App() {
     if (charAllowed) str += "!@#$%^&*()_+{}|?<>~`\/"
 
     for (var i = 0; i < length; i++){
-      let char = Math.floor(Math.random() * str.length +1)
+      let char = Math.floor(Math.random() * str.length )
       pass += str.charAt(char)  
     }
 
     setPassword(pass);
 
-  },[password, numAllowed, charAllowed, setPassword])
+  },[numAllowed, charAllowed, setPassword])
 
   const copyPasswordToClipboard = useCallback(() => {
     passRef.current?.select(); // Seleting using useRef hook
